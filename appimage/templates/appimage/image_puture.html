@@ -1,0 +1,28 @@
+
+{% extends 'homepage/base.html' %}
+
+{% block title %}
+Anh Ki yeu
+{% endblock %}
+
+{% block content %}
+	
+<!-- display all image own member -->
+	{% if puture %}
+	{% for image in puture %}
+		<!-- in class models Image_class_picture -->
+		{% if image %}
+		<a href="{{image.image_picture.url}}">
+ 		<img src="{{image.image_picture.url}}" class="rounded"
+ 			 alt="{{image}}" width=400px height=300px
+ 			style="padding: 10px;">
+ 		</a>
+ 		
+		{% endif %}
+ 	{% endfor %}
+ 	{% else %}
+ 	<h1>Hien Tai Chua Co Anh nao</h1>
+ 	<h4>Vui long Doi Cap nhat!!</h4>
+ 	{% endif %}
+
+{% endblock %}

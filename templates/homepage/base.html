@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  		<title>{% block title %}{% endblock %}</title>
+<!-- 
+
+Highway Template
+
+https://templatemo.com/tm-520-highway
+
+-->
+
+        {% include 'homepage/head.html' %}
+
+<body>
+
+{% include 'homepage/navbar.html' %}
+
+{% block banner %}
+{% endblock %}
+
+
+  	<div class="container">
+    	<div class="row" style="padding-top: 10px;">
+    		<div class="col-sm-9" style="background-color: #a4a4a4">
+    			{% block content %}
+    			{% endblock %}
+
+
+
+      		</div>
+            <!-- costom it hears -->
+            <!-- display list -->
+    		<div class="col-sm-3" style="background-color: #a7f5d5">
+        		{% block list %}
+    			{% endblock %}
+					
+        		
+      		</div>
+      	</div>
+  	</div>
+
+
+
+
+{% include 'homepage/footer.html' %}
+
+{% include 'homepage/scrips.html' %}
+
+    
+</body>
+</html>

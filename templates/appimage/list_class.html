@@ -1,0 +1,41 @@
+{% extends 'homepage/base.html' %}
+
+{% block title %}
+Danh Sach Lop
+{% endblock %}
+{% load static %}
+{% block content %}
+
+	<div class="card-columns">
+	
+	{% for list in list_all %}
+	
+	<div class="card" style="width:290px">
+		{% if list.image_rep %}
+		<img 
+		class="card-img-top" 
+		src="{{list.image_rep.url}}" 
+		alt="Card image" 
+		height="200px">
+		{% else %}
+		<img 
+		class="card-img-top"
+		src="{% static "core/image/index.jpeg" %}" 
+		alt="Chua cap nhat" 
+		height="200px">
+		{% endif %}
+		<div class="card-body">
+	    	<h4 class="card-title">{{list.full_name}}</h4>
+	    		{% if list.title %}
+	    		<p class="card-text">{{list.title}}</p>
+	    		{% else %}
+	    		<p class="card-text">Chua cap nhat</p>
+	    		{% endif %}
+    			<a href="{% url 'image' list.id %}" class="btn btn-primary">Xem Ho So</a>
+			
+  		</div>
+	</div>
+	
+	{% endfor %}
+	</div>
+{% endblock %}

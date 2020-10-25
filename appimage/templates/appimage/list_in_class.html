@@ -1,0 +1,28 @@
+
+{% extends 'homepage/base.html' %}
+
+{% block title %}
+Anh Lop
+{% endblock %}
+
+{% block content %}
+	
+<!-- display all image own member -->
+	{% if classroom %}
+	{% for image in classroom %}
+		<!-- in class models Image_class_picture -->
+		{% if image %}
+		<a href="{{image.image_class.url}}">
+ 		<img src="{{image.iamge_class.url}}" class="rounded"
+ 			 alt="{{image}}" width=400px height=300px
+ 			style="padding: 10px;">
+ 		</a>
+ 		
+		{% endif %}
+ 	{% endfor %}
+ 	{% else %}
+ 	<h1>Hien Tai Chua Co Anh nao</h1>
+ 	<h4>Vui long Doi Cap nhat!!</h4>
+ 	{% endif %}
+
+{% endblock %}

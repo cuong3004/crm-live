@@ -1,0 +1,29 @@
+
+
+{% extends 'homepage/base.html' %}
+
+{% block title %}
+Danh Sach Anh
+{% endblock %}
+
+{% block content %}
+	
+<!-- display all image own member -->
+	{% if list_member.image_user_set.all %}
+	{% for list in list_member.image_user_set.all %}
+	
+		{% if list %}
+		<a href="{{list.image.url}}">
+ 		<img src="{{list.image.url}}" class="rounded" 
+ 			alt="{{list}}" width=400px height=300px
+ 			style="padding: 10px;">
+ 		</a>
+ 		
+		{% endif %}
+ 	{% endfor %}
+ 	{% else %}
+ 	<h1>Hien Tai Chua Co Anh nao</h1>
+ 	<h4>Vui long Doi Cap nhat!!</h4>
+ 	{% endif %}
+
+{% endblock %}

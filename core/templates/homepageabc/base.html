@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style type="text/css">
+		html, body{
+			height: 100%;
+			background-color: #9DC4AF;
+		}
+		nav {
+			background-color: #a2a2a2;
+		}
+		footer{
+			background-color: #f2f2f2;
+		}
+		ul li a{
+			text-align: left;
+		}
+		ul li a:hover{
+			background-color: ;
+		}
+	</style>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	{% load static %}
+</head>
+<body>
+	<div class="container-fluid" style="height:95%;">
+		<div class="row" style="background-color: #3587E4; padding-top: 10px;">
+				<!-- bg_color #3587E4 -->
+			<div class="col-sm-4">
+				<!-- 
+				Image Page Page Page!!! -->
+				<img src="{% static "core/image/index.jpeg" %}"
+					width="290px"
+					height="123px"
+					>
+			</div>
+
+			<!-- Heelo team !!! -->
+			<div class="col-sm-8">
+				<header>
+					
+					<h1>Xin chào 12A2</h1>
+					
+				</header>
+			</div>		
+		</div>
+		<!-- navbar -->
+		<div class="row">
+			<nav>
+
+<!-- <a class="navbar-brand" href="#">
+
+				  		 Image Logo item
+				  		{% comment %}<img src="{% static "core/image/index.jpeg" %}"
+				  			width="10px"
+				  			height="10px">
+				  		{% endcomment %}
+				  		Logo
+				  	</a> --> 
+
+ 							 <ul class="nav nav-pills">
+
+ 	<li class="nav-item">
+  					<a class="nav-link" href="#">	
+				  		<img src="{% static "core/image/index.jpeg" %}"
+				  			width="30px"
+				  			height="30px"
+				  			>
+				  	
+				  		
+				  	</a>
+  	</li>
+  	<li class="nav-item">
+    <a class="nav-link" href="{% url 'index' %}">Home</a>
+  	</li>
+  	<li class="nav-item">
+    <a class="nav-link" href="{% url 'class' %}">Hồ sơ</a>
+  	</li>
+
+
+  <li class="nav-item">
+					      	<a class="nav-link" href="{% url 'classroom' %}">Ảnh</a>
+					    </li>
+	<li class="nav-item">
+					     	<a class="nav-link" href="{% url 'puture' %}">Kỉ yếu</a>
+					    </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">List</a>
+<div class="dropdown-menu" style="background-color: #668A3C;" >
+    						{% for list in list_all %}
+								<a href="{% url 'image' list.id %}" class="dropdown-item">
+									{% comment %}
+								<img src="{{list.image_rep.url}}" class="rounded-circle"
+								alt="" height=25px width=25px />
+								{% endcomment%}
+								{{list.full_name}}
+								</a>
+							{% endfor %}
+ 							</div>
+  </li>
+</ul> 
+					    </li>
+				 	</ul>
+				
+			</nav>
+		</div>
+		<div class="row">
+			<div class="col-sm-2">
+			</div>
+			<!-- Block content -->
+			<div class="col-sm-8">
+				{% block content %}
+				{% endblock %}
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	</div>
+</body>
+</html>
