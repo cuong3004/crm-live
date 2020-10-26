@@ -9,3 +9,4 @@ pytz==2020.1
 six==1.15.0
 virtualenv==20.0.21
 zipp==1.1.0
+whitenoise==5.2.0
